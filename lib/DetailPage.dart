@@ -1,15 +1,15 @@
 import 'package:apitask4/ApiModal.dart';
 import 'package:flutter/material.dart';
 
-class DetailApiPage extends StatefulWidget {
-  const DetailApiPage({Key? key, required this.demo}) : super(key: key);
+class DetailPage extends StatefulWidget {
+  const DetailPage({Key? key, required this.demo}) : super(key: key);
   final ApiGetData demo;
 
   @override
-  State<DetailApiPage> createState() => _DetailApiPageState();
+  State<DetailPage> createState() => _DetailPageState();
 }
 
-class _DetailApiPageState extends State<DetailApiPage> {
+class _DetailPageState extends State<DetailPage> {
 
   @override
   Widget build(BuildContext context) {

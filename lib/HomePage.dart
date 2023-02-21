@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:apitask4/DetailApiPage.dart';
+import 'package:apitask4/DetailPage.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'Product_Modal.dart';
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    DetailApiPage(demo: data[index]),
+                                    DetailPage(demo: data[index]),
                               ));
                         },
                         child: Card(
