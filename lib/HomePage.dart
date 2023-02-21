@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:apitask4/DetailApiPage.dart';
+import 'package:apitask4/DetailPage.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'Product_Modal.dart';
+import 'ApiModal.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,18 +21,19 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<List<ApiGetData>> getApiData() async {
-    var result = await http.get(Uri.parse("https://jsonplaceholder.typicode.com/users/"));
+    var result = await http
+        .get(Uri.parse("https://jsonplaceholder.typicode.com/users/"));
     if (result.statusCode == 200) {
       final List response = json.decode(result.body) as List;
       // print(response);
-      List<ApiGetData> temp =
-      response.map((e) => ApiGetData.fromJson(e)).toList();
+      List<ApiGetData> ApiData =
+          response.map((e) => ApiGetData.fromJson(e)).toList();
       // print(temp);
       setState(() {
-        data = temp;
+        data = ApiData;
         // print('refresh');
       });
-      return temp;
+      return ApiData;
     } else {
       throw Exception();
     }
@@ -52,9 +53,8 @@ class _HomePageState extends State<HomePage> {
         ),
         body: data.isNotEmpty
             ? Column(
-                children:
-                [
-                  Expanded(
+                children: [
+                   Expanded(
                       child: ListView.builder(
                     itemCount: data.length,
                     itemBuilder: (context, index) {
@@ -116,10 +116,6 @@ class _HomePageState extends State<HomePage> {
                   )),
                 ],
               )
-            :
-        const Center(
-            child: CircularProgressIndicator())
-    );
+            : const Center(child: CircularProgressIndicator()));
   }
 }
-

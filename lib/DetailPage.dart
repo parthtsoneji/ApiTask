@@ -1,4 +1,4 @@
-import 'package:apitask4/Product_Modal.dart';
+import 'package:apitask4/ApiModal.dart';
 import 'package:flutter/material.dart';
 
 class DetailApiPage extends StatefulWidget {
